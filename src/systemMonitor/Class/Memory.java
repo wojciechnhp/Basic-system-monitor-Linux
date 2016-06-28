@@ -26,8 +26,8 @@ public class Memory {
             }
         }catch (IOException ex) {
         }
-        swap = false;
         if(totalSwap > 0) swap = true;
+        else swap = false;
     }
     public void updateUssingMem() {
         Path plik = Paths.get("/proc/meminfo");

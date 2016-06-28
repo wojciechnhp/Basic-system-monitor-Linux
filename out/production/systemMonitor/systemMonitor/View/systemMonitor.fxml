@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.4975062344139651" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="804.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="systemMonitor.Controller.SystemMonitorController">
+  <items>
+    <AnchorPane>
+         <children>
+            <TableView fx:id="processTableView" layoutX="48.0" layoutY="99.0" prefHeight="398.0" prefWidth="295.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="pidColumn" prefWidth="75.0" text="Pid" />
+                <TableColumn fx:id="nazwaColumn" prefWidth="75.0" text="Nazwa" />
+                  <TableColumn fx:id="cpuColumn" prefWidth="75.0" text="CPU %" />
+                  <TableColumn fx:id="vSizeColumn" prefWidth="75.0" text="V Size" />
+                  <TableColumn fx:id="ramColumn" prefWidth="75.0" text="Ram" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+    <AnchorPane prefHeight="598.0" prefWidth="371.0">
+         <children>
+            <Label fx:id="procNameLabel" layoutX="14.0" layoutY="14.0" prefHeight="16.0" prefWidth="385.0" text="Label" />
+            <Label fx:id="ramTotalLabel" layoutX="5.0" layoutY="300.0" prefHeight="16.0" prefWidth="178.0" text="Label" />
+            <Label fx:id="swapTotalLabel" layoutX="183.0" layoutY="300.0" prefHeight="16.0" prefWidth="178.0" text="Label" />
+            <LineChart fx:id="lineChartCpu" alternativeRowFillVisible="false" animated="false" createSymbols="false" horizontalZeroLineVisible="false" layoutX="12.0" layoutY="44.0" legendVisible="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="249.0" prefWidth="375.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </LineChart>
+            <Label fx:id="cpuPercentLabel" layoutX="14.0" layoutY="30.0" text="Label" />
+            <LineChart fx:id="lineChartMem" alternativeRowFillVisible="false" animated="false" createSymbols="false" horizontalZeroLineVisible="false" layoutX="12.0" layoutY="316.0" legendVisible="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="263.0" prefWidth="375.0" verticalGridLinesVisible="false" verticalZeroLineVisible="false">
+               <xAxis>
+                  <CategoryAxis side="BOTTOM" />
+               </xAxis>
+               <yAxis>
+                  <NumberAxis side="LEFT" />
+               </yAxis>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </LineChart>
+         </children></AnchorPane>
+  </items>
+</SplitPane>
